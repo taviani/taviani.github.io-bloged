@@ -4,7 +4,7 @@ module.exports = {
   siteTitle: 'Edouard Lacan', // Navigation and Site Title
   siteTitleAlt: 'Edouard Lacan - Mini Blog', // Alternative Site title for SEO
   siteTitleManifest: 'Edouard Lacan',
-  siteUrl: 'https://taviani.github.io', // Domain of your site. No trailing slash!
+  siteUrl: 'https://taviani.github.io/bloged', // Domain of your site. No trailing slash!
   siteLanguage: 'fr', // Language Tag on <html> element
   siteHeadline: 'Macro blogging', // Headline for schema.org JSONLD
   siteBanner: '/social/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
