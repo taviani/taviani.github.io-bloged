@@ -12,4 +12,4 @@ J'aurais préféré <code>git push</code>
 
 Mais surtout ce qui est relou c'est qu'il ne supprime pas les builds précédents.
 
-Je vais devoir trouver une autre façon de faire.
+Je vais devoir trouver une autre façon de faire. C'est pas très DevOps tout ça...
