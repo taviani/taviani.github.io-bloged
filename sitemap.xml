@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://taviani.github.io/bloged/markdown-cheatsheet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/using-remark-images</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/use-component-in-mdx</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/react-live-code-example</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/categories/general</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/categories/remark</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/categories/coding</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/categories/help</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/categories/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/contact/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://taviani.github.io/bloged/success/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/markdown-cheatsheet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/using-remark-images</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/use-component-in-mdx</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/react-live-code-example</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/categories/general</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/categories/remark</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/categories/coding</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/categories/help</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/categories/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/contact/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://taviani.github.io/bloged/bloged/success/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
