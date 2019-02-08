@@ -1,4 +1,4 @@
-# taviani.github.io
+# Bloged
 
 J'utilise https://github.com/LekoArts/gatsby-starter-minimal-blog comme modèle.
 
