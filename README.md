@@ -1,5 +1,7 @@
 # Bloged
 
+[![Build Status](https://travis-ci.org/taviani/bloged.svg?branch=master)](https://travis-ci.org/taviani/bloged)
+
 J'utilise https://github.com/LekoArts/gatsby-starter-minimal-blog comme modèle.
 
 C'est un starter pour Gatsby. Donc qui encapsule une appli React.
