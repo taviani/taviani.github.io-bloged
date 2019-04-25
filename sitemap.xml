@@ -3,6 +3,7 @@
 <url> <loc>https://blog.kde.fr/la-petite-cheatsheet-pour-le-markdown</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/utiliser-un-component-ou-un-plugin</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/voila-mon-modeste-blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.kde.fr/welcome-travis-ci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/categories/general</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/categories/coding</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/categories/astuces</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
