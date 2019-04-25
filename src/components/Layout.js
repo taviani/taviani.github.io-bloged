@@ -211,7 +211,7 @@ const Layout = ({ children, customSEO }) => (
           {children}
           <Footer>
             <span>&copy; 2019 by Edouard Lacan<br />
-            Last build: {data.site.buildTime}</span>
+            Last build: {data.site.buildTime} <a href="https://travis-ci.org/taviani/bloged"><img src="https://travis-ci.org/taviani/bloged.svg?branch=master" alt="Travis CI" /></a></span>
           </Footer>
         </React.Fragment>
       </ThemeProvider>
