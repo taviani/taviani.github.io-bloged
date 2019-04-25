@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "stable"
+  - "10.0"
 cache:
   directories:
   - node_modules
@@ -13,9 +13,10 @@ deploy:
   on:
     branch: master
 before_script:
-  - "npm i -g gatsby"
-  - "npm i"
+  - "npm i -g gatsby-cli"
+  - "yarn"
 script:
-  - "npm run test"
+  - "gatsby test"
+  - "gatsby build"
 after_success:
-  - "npm run deploy"
+  - "gatsby deploy"
