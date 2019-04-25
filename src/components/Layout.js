@@ -212,8 +212,7 @@ const Layout = ({ children, customSEO }) => (
           <Footer>
             <span>&copy; 2019 by Edouard Lacan<br />
             Last build: {data.site.buildTime} <br />
-            <a href="https://travis-ci.org/taviani/bloged"><img src="https://travis-ci.org/taviani/bloged.svg?branch=master" alt="Travis CI" /></a> 
-            <a href="https://www.codacy.com/app/devops_17/bloged"><img src="https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3"/></a></span>
+            <a href="https://travis-ci.org/taviani/bloged"><img src="https://travis-ci.org/taviani/bloged.svg?branch=master" alt="Travis CI" /></a> <a href="https://www.codacy.com/app/devops_17/bloged"><img src="https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3"/></a></span>
           </Footer>
         </React.Fragment>
       </ThemeProvider>
