@@ -16,7 +16,7 @@ before_script:
   - "npm i -g gatsby-cli"
   - "yarn"
 script:
-  - "gatsby test"
+  - "yarn test"
   - "gatsby build"
 after_success:
-  - "gatsby deploy"
+  - "yarn deploy"
