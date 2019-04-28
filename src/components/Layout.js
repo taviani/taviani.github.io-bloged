@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import SEO from './SEO'
+import Footer from './Footer'
 import theme from '../../config/theme'
+import kebabCase from 'lodash/kebabCase';
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -185,14 +187,52 @@ const GlobalStyle = createGlobalStyle`
     display: none !important;
   }
 `
-
-const Footer = styled.footer`
-  text-align: center;
-  padding: 3rem 1rem;
+const Wrapper = styled.div`
+  display: flex;
+  margin: 0rem auto 0 auto;
+  a {
+    color: ${props => props.theme.colors.primary};
+    display: flex;
+    align-items: center;
+  }
+  justify-items: center;
+`
+const LeftFoot = styled.div`
   span {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    color: ${props => props.theme.colors.grey.light};
+    a {
+      margin-top: 1rem;
+    }
+    a:hover {
+      color: ${props => props.theme.colors.grey.dark};
+    }
   }
 `
+
+const RightFoot = styled.div`
+  margin-left: auto;
+  text-align: right;
+  span {
+    font-size: 0.8rem;
+    color: ${props => props.theme.colors.grey.light};
+  }
+  div {
+    display: flex;
+    margin-bottom: 1rem;
+    img {
+      margin-left: 1rem;
+    }
+  }
+`
+
+// const Footer = styled.footer`
+//   text-align: center;
+//   padding: 3rem 1rem;
+//   span {
+//     font-size: 0.75rem;
+//   }
+// `
 
 const Layout = ({ children, customSEO }) => (
   <StaticQuery
@@ -210,23 +250,33 @@ const Layout = ({ children, customSEO }) => (
           <GlobalStyle />
           {children}
           <Footer>
-            <span>
-              &copy; 2019 by Edouard Lacan <br />
-              Last build: {data.site.buildTime} <br />
-              <a href="https://travis-ci.org/taviani/bloged">
-                <img
-                  src="https://travis-ci.org/taviani/bloged.svg?branch=master"
-                  alt="Travis CI badge"
-                />
-              </a>
-              &nbsp;
-              <a href="https://www.codacy.com/app/devops_17/bloged">
-                <img
-                  src="https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3"
-                  alt="Codacy badge"
-                />
-              </a>
-            </span>
+            <Wrapper>
+              <LeftFoot>
+                <span>
+                &copy; 2019 by Édouard Lacan
+                  <Link to={`/about`}>À propos</Link>
+                </span>
+              </LeftFoot>
+              <RightFoot>
+                <span>
+                  <div>
+                    <a href="https://travis-ci.org/taviani/bloged">
+                      <img
+                        src="https://travis-ci.org/taviani/bloged.svg?branch=master"
+                        alt="Travis CI badge"
+                      />
+                    </a>
+                    <a href="https://www.codacy.com/app/devops_17/bloged">
+                      <img
+                        src="https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3"
+                        alt="Codacy badge"
+                      />
+                    </a>
+                  </div>
+                  Last build: {data.site.buildTime}
+                </span>
+              </RightFoot>
+            </Wrapper>
           </Footer>
         </React.Fragment>
       </ThemeProvider>

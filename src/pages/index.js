@@ -51,7 +51,7 @@ const IndexPage = ({
     <Wrapper>
       <Hero>
         <h1>Salut.</h1>
-        <p>Je suis Edouard Lacan, je mets quelques articles en ligne pour évoquer les sujets qui m'intéressent.</p>
+        <p>Je suis Édouard Lacan, je mets quelques articles en ligne pour évoquer les sujets qui m'intéressent.</p>
         <a target="_blank" href={config.linkedin} rel="noopener noreferrer">
           <Button>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

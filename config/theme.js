@@ -9,6 +9,7 @@ const colors = {
     default: 'rgba(0, 0, 0, 0.7)',
     light: 'rgba(0, 0, 0, 0.5)',
     ultraLight: 'rgba(0, 0, 0, 0.25)',
+    uberLight: 'rgba(0, 0, 0, 0.1)',
   },
   white: 'white',
 }
