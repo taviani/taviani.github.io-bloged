@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import kebabCase from 'lodash/kebabCase'
+// import kebabCase from 'lodash/kebabCase'
 
 import { Layout, Wrapper, Header, SectionTitle } from '../components'
 import config from '../../config'
@@ -24,17 +24,7 @@ const Content = styled.div`
   }
 `
 
-const Title = styled.h3`
-  position: relative;
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  margin-bottom: 0.75rem;
-`
-
-const About = ({
-  data: {
-    allMdx: { group },
-  },
-}) => (
+const About = () => (
   <Layout>
     <Wrapper>
       <Helmet title={`À propos | ${config.siteTitle}`} />
@@ -43,31 +33,10 @@ const About = ({
       </Header>
       <Content>
         <SectionTitle>À propos</SectionTitle>
-        <div>
-          Un petit texte de présentation.
-        </div>
+        <div>Un petit texte de présentation.</div>
       </Content>
     </Wrapper>
   </Layout>
 )
 
 export default About
-
-About.propTypes = {
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      group: PropTypes.array.isRequired,
-    }),
-  }).isRequired,
-}
-
-export const postQuery = graphql`
-  query AboutPage {
-    allMdx {
-      group(field: frontmatter___categories) {
-        fieldValue
-        totalCount
-      }
-    }
-  }
-`

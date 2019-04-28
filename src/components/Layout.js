@@ -6,7 +6,7 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import SEO from './SEO'
 import Footer from './Footer'
 import theme from '../../config/theme'
-import kebabCase from 'lodash/kebabCase';
+// import kebabCase from 'lodash/kebabCase'
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -253,8 +253,8 @@ const Layout = ({ children, customSEO }) => (
             <Wrapper>
               <LeftFoot>
                 <span>
-                &copy; 2019 by Édouard Lacan
-                  <Link to={`/about`}>À propos</Link>
+                  &copy; 2019 by Édouard Lacan
+                  <Link to="/about">À propos</Link>
                 </span>
               </LeftFoot>
               <RightFoot>

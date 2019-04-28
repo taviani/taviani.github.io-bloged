@@ -25,8 +25,6 @@ const Content = styled.div`
   }
 `
 
-
-
 const Footer = ({ children }) => (
   <Wrapper>
     <Content>{children}</Content>
