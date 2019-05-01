@@ -190,56 +190,38 @@ const GlobalStyle = createGlobalStyle`
 const Wrapper = styled.div`
   display: flex;
   margin: 0rem auto 0 auto;
+  text-align: center;
   a {
     color: ${props => props.theme.colors.primary};
-    display: flex;
+    display: block;
     align-items: center;
   }
-  justify-items: center;
-`
-const LeftFoot = styled.div`
-  span {
-    font-size: 0.8rem;
-    color: ${props => props.theme.colors.grey.light};
-    a {
-      margin-top: 1rem;
-    }
-    a:hover {
-      color: ${props => props.theme.colors.grey.dark};
-    }
-  }
-`
-
-const RightFoot = styled.div`
-  margin-left: auto;
-  text-align: right;
-  span {
-    font-size: 0.8rem;
-    color: ${props => props.theme.colors.grey.light};
+  a:hover {
+    color: ${props => props.theme.colors.grey.dark};
   }
   div {
-    display: flex;
-    margin-bottom: 1rem;
-    img {
-      margin-left: 1rem;
+    display: block;
+    margin: 1rem auto 1rem auto;
+    div {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      img {
+        margin: 0rem 1rem;
+      }
+    }
+    span {
+      white-space: nowrap;
     }
   }
 `
-
-// const Footer = styled.footer`
-//   text-align: center;
-//   padding: 3rem 1rem;
-//   span {
-//     font-size: 0.75rem;
-//   }
-// `
 
 const Layout = ({ children, customSEO }) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
         site {
-          buildTime(formatString: "YYYY-MM-DD")
+          buildTime(formatString: "dddd Do MMMM, YYYY", locale: "fr")
         }
       }
     `}
@@ -251,28 +233,21 @@ const Layout = ({ children, customSEO }) => (
           {children}
           <Footer>
             <Wrapper>
-              <LeftFoot>
-                <span>
-                  &copy; 2019 by Édouard Lacan
-                  <Link to="/about">À propos</Link>
-                </span>
-              </LeftFoot>
-              <RightFoot>
-                <span>
-                  <div>
-                    <a href="https://travis-ci.org/taviani/bloged">
-                      <img src="https://travis-ci.org/taviani/bloged.svg?branch=master" alt="Travis CI badge" />
-                    </a>
-                    <a href="https://www.codacy.com/app/devops_17/bloged">
-                      <img
-                        src="https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3"
-                        alt="Codacy badge"
-                      />
-                    </a>
-                  </div>
-                  Last build: {data.site.buildTime}
-                </span>
-              </RightFoot>
+              <div>
+                <Link to="/about">À propos</Link>
+                <div>
+                  <a href="https://travis-ci.org/taviani/bloged">
+                    <img src="https://travis-ci.org/taviani/bloged.svg?branch=master" alt="Travis CI badge" />
+                  </a>
+                  <a href="https://www.codacy.com/app/devops_17/bloged">
+                    <img
+                      src="https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3"
+                      alt="Codacy badge"
+                    />
+                  </a>
+                </div>
+                Dernière compilation des sources : <span>{data.site.buildTime}</span>
+              </div>
             </Wrapper>
           </Footer>
         </React.Fragment>

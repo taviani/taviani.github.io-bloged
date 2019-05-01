@@ -8,7 +8,7 @@ const Wrapper = styled.footer`
   grid-column: 1 / -1;
   margin-top: 5rem;
   padding: 2rem 2rem 5rem 2rem;
-`;
+`
 
 const Content = styled.div`
   max-width: ${props => props.theme.maxWidth};
@@ -21,16 +21,16 @@ const Content = styled.div`
       color: ${props => props.theme.colors.white};
     }
   }
-`;
+`
 
 const Footer = ({ children }) => (
   <Wrapper>
     <Content>{children}</Content>
   </Wrapper>
-);
+)
 
-export default Footer;
+export default Footer
 
 Footer.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired
-};
+}
