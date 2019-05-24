@@ -25,5 +25,6 @@ module.exports = {
 
   linkedin: 'https://www.linkedin.com/in/edouard-lacan/',
   github: 'https://github.com/taviani',
+  gitlab: 'https://gitlab.com/taviani',
   instagram: 'https://www.instagram.com/edouardlacan/',
 }
