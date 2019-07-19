@@ -5,6 +5,7 @@
 <url> <loc>https://blog.kde.fr/voila-mon-modeste-blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/welcome-travis-ci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/gitlab-vs-github</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.kde.fr/graph-ql-par-facebook</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/categories/general</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/categories/coding</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.kde.fr/categories/astuces</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
