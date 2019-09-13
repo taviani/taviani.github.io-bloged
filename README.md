@@ -1,6 +1,6 @@
 # Bloged
 
-[![Build Status](https://travis-ci.org/taviani/bloged.svg?branch=master)](https://travis-ci.org/taviani/bloged) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3)](https://www.codacy.com/app/devops_17/bloged)
+[![Build Status](https://travis-ci.org/taviani/bloged.svg?branch=master)](https://travis-ci.org/taviani/bloged) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3)](https://www.codacy.com/app/devops_17/bloged) [![Greenkeeper badge](https://badges.greenkeeper.io/taviani/bloged.svg)](https://greenkeeper.io/)
 
 J'utilise [gatsby-starter-minimal-blog](https://github.com/LekoArts/gatsby-starter-minimal-blog "Gatsby-starter-minimal-blog") comme modèle.
 
