@@ -14,9 +14,8 @@ deploy:
     branch: master
 before_script:
   - "npm i -g gatsby-cli"
-  - "yarn"
 script:
-  - "yarn test"
+  - "npm test"
   - "gatsby build"
 after_success:
-  - "yarn deploy"
+  - "npm deploy"
