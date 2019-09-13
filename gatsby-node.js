@@ -1,7 +1,13 @@
 const _ = require('lodash')
 
-// graphql function returns a promise so we can use this little promise helper to have a nice result/error state
-const wrapper = promise => promise.then(result => ({ result, error: null })).catch(error => ({ error, result: null }))
+// graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
+const wrapper = promise =>
+  promise.then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+    return result
+  })
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
@@ -14,8 +20,7 @@ exports.onCreateNode = ({ node, actions }) => {
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
     ) {
       slug = `/${_.kebabCase(node.frontmatter.slug)}`
-    }
-    if (
+    } else if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {
@@ -31,19 +36,17 @@ exports.createPages = async ({ graphql, actions }) => {
   const postTemplate = require.resolve('./src/templates/post.js')
   const categoryTemplate = require.resolve('./src/templates/category.js')
 
-  const { error, result } = await wrapper(
+  const result = await wrapper(
     graphql(`
       {
-        allMdx {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                categories
-              }
+        allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+          nodes {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              categories
             }
           }
         }
@@ -51,48 +54,42 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
   )
 
-  if (!error) {
-    const posts = result.data.allMdx.edges
+  const posts = result.data.allMdx.nodes
 
-    posts.forEach((edge, index) => {
-      const next = index === 0 ? null : posts[index - 1].node
-      const prev = index === posts.length - 1 ? null : posts[index + 1].node
+  posts.forEach((n, index) => {
+    const next = index === 0 ? null : posts[index - 1]
+    const prev = index === posts.length - 1 ? null : posts[index + 1]
 
-      createPage({
-        path: edge.node.fields.slug,
-        component: postTemplate,
-        context: {
-          slug: edge.node.fields.slug,
-          prev,
-          next,
-        },
+    createPage({
+      path: n.fields.slug,
+      component: postTemplate,
+      context: {
+        slug: n.fields.slug,
+        prev,
+        next,
+      },
+    })
+  })
+
+  const categorySet = new Set()
+
+  _.each(posts, n => {
+    if (_.get(n, 'frontmatter.categories')) {
+      n.frontmatter.categories.forEach(cat => {
+        categorySet.add(cat)
       })
+    }
+  })
+
+  const categories = Array.from(categorySet)
+
+  categories.forEach(category => {
+    createPage({
+      path: `/categories/${_.kebabCase(category)}`,
+      component: categoryTemplate,
+      context: {
+        category,
+      },
     })
-
-    const categorySet = new Set()
-
-    _.each(posts, edge => {
-      if (_.get(edge, 'node.frontmatter.categories')) {
-        edge.node.frontmatter.categories.forEach(cat => {
-          categorySet.add(cat)
-        })
-      }
-    })
-
-    const categories = Array.from(categorySet)
-
-    categories.forEach(category => {
-      createPage({
-        path: `/categories/${_.kebabCase(category)}`,
-        component: categoryTemplate,
-        context: {
-          category,
-        },
-      })
-    })
-
-    return
-  }
-
-  console.log(error)
+  })
 }
