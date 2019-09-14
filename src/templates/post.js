@@ -72,7 +72,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
             ))}
           </Subline>
           <PostContent>
-            <MDXRenderer>{postNode.code}</MDXRenderer>
+            <MDXRenderer>{postNode.body}</MDXRenderer>
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </Content>

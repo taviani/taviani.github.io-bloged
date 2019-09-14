@@ -3,16 +3,22 @@
 /* eslint react/prop-types: 0 */
 /* eslint react/destructuring-assignment: 0 */
 import React from 'react'
-import { render } from 'react-dom'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/vsDark'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
+import styled from 'styled-components'
+
+const StyledEditor = styled(LiveEditor)`
+  background: ${theme.plain.backgroundColor};
+  border-radius: 5px;
+  margin-bottom: 1rem;
+`
 
 const Code = ({ codeString, language, ...props }) => {
   if (props['react-live']) {
     return (
-      <LiveProvider code={codeString} noInline={true}>
-        <LiveEditor />
+      <LiveProvider code={codeString} noInline={true} theme={theme}>
+        <StyledEditor />
         <LiveError />
         <LivePreview />
       </LiveProvider>
