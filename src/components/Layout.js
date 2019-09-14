@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import { Link } from 'gatsby'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import SEO from './SEO'
-import Footer from './Footer'
 import theme from '../../config/theme'
-// import kebabCase from 'lodash/kebabCase'
+import useBuildTime from '../hooks/useBuildTime'
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -187,6 +186,15 @@ const GlobalStyle = createGlobalStyle`
     display: none !important;
   }
 `
+
+const Footer = styled.footer`
+  text-align: center;
+  padding: 3rem 1rem;
+  span {
+    font-size: 0.75rem;
+  }
+`
+
 const Wrapper = styled.div`
   display: flex;
   margin: 0rem auto 0 auto;
@@ -207,7 +215,7 @@ const Wrapper = styled.div`
       text-align: center;
       justify-content: center;
       img {
-        margin: 0rem 1rem;
+        margin: 0rem 0.5rem;
       }
     }
     span {
@@ -216,45 +224,38 @@ const Wrapper = styled.div`
   }
 `
 
-const Layout = ({ children, customSEO }) => (
-  <StaticQuery
-    query={graphql`
-      query LayoutQuery {
-        site {
-          buildTime(formatString: "dddd Do MMMM, YYYY", locale: "fr")
-        }
-      }
-    `}
-    render={data => (
-      <ThemeProvider theme={theme}>
-        <React.Fragment>
-          {!customSEO && <SEO buildTime={data.site.buildTime} />}
-          <GlobalStyle />
-          {children}
-          <Footer>
-            <Wrapper>
+const Layout = ({ children, customSEO }) => {
+  const buildTime = useBuildTime()
+
+  return (
+    <ThemeProvider theme={theme}>
+      <>
+        {!customSEO && <SEO buildTime={buildTime} />}
+        <GlobalStyle />
+        {children}
+        <Footer>
+          <Wrapper>
+          <div>
+            <Link to="/about">À propos</Link>
               <div>
-                <Link to="/about">À propos</Link>
-                <div>
-                  <a href="https://travis-ci.org/taviani/bloged">
-                    <img src="https://travis-ci.org/taviani/bloged.svg?branch=master" alt="Travis CI badge" />
-                  </a>
-                  <a href="https://www.codacy.com/app/devops_17/bloged">
-                    <img
-                      src="https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3"
-                      alt="Codacy badge"
-                    />
-                  </a>
-                </div>
-                Dernière compilation des sources : <span>{data.site.buildTime}</span>
+                <a href="https://travis-ci.org/taviani/bloged">
+                  <img src="https://travis-ci.org/taviani/bloged.svg?branch=master" alt="Travis CI badge" />
+                </a>
+                <a href="https://www.codacy.com/app/devops_17/bloged">
+                  <img
+                    src="https://api.codacy.com/project/badge/Grade/529ea8b9f5ac4c59a90fa51abdd34bb3"
+                    alt="Codacy badge"
+                  />
+                </a>
               </div>
-            </Wrapper>
-          </Footer>
-        </React.Fragment>
-      </ThemeProvider>
-    )}
-  />
-)
+            <span>Dernière compilation des sources : {buildTime}</span>
+          </div>
+          </Wrapper>
+        </Footer>
+      </>
+    </ThemeProvider>
+  )
+}
 
 export default Layout
 
