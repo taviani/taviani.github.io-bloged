@@ -36,14 +36,14 @@ const PrevNext = ({ next, prev }) => (
   <Wrapper>
     {prev && (
       <Prev>
-        <span>Previous</span>
+        <span>Précédent</span>
         <Link to={prev.fields.slug}>{prev.frontmatter.title}</Link>
       </Prev>
     )}
 
     {next && (
       <Next>
-        <span>Next</span>
+        <span>Suivant</span>
         <Link to={next.fields.slug}>{next.frontmatter.title}</Link>
       </Next>
     )}

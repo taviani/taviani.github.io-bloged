@@ -63,7 +63,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
         <Content>
           <Title>{post.title}</Title>
           <Subline>
-            {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
+            {post.date} &mdash; {postNode.timeToRead} mn de lecture &mdash; Dans{' '}
             {post.categories.map((cat, i) => (
               <React.Fragment key={cat}>
                 {!!i && ', '}

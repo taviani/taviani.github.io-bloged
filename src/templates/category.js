@@ -25,7 +25,7 @@ const Content = styled.div`
 
 const Category = ({ pageContext: { category }, data: { allMdx } }) => {
   const { nodes, totalCount } = allMdx
-  const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`
+  const subline = `${totalCount} publication${totalCount === 1 ? '' : 's'} dans la catégorie "${category}"`
 
   return (
     <Layout>
@@ -35,9 +35,9 @@ const Category = ({ pageContext: { category }, data: { allMdx } }) => {
           <Link to="/">{config.siteTitle}</Link>
         </Header>
         <Content>
-          <SectionTitle>Category &ndash; {category}</SectionTitle>
+          <SectionTitle>Categorie &ndash; {category}</SectionTitle>
           <Subline sectionTitle>
-            {subline} (See <Link to="/categories">all categories</Link>)
+            {subline} (Voir <Link to="/categories">toutes les categories</Link>)
           </Subline>
           {nodes.map(post => (
             <Article
