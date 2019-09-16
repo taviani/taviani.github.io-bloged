@@ -10,4 +10,6 @@ Les sources sont dans la branche Master et le module gh-pages crée une branche 
 
 La redaction se fait en local et la publication par la commande <code>git push</code>
 
-L'intégration continue est assurée par [Travis-CI](https://www.travis-ci.org "Travis-CI") et [Codacy](https://www.codacy.com "Codacy")
+L'intégration continue est assurée par [Travis-CI](https://www.travis-ci.org "Travis-CI") et [Codacy](https://www.codacy.com "Codacy") pour ce qui est du code lui-même. 
+
+[Greenkeepers](https://greenkeeper.io "Greenkeepers") veille à la maintenance des dépendances en assurant la mise à jours du package.json via la création de branches automatique.
