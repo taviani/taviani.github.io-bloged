@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import moment from 'moment'
-import localization from 'moment/locale/fr'
+import 'moment/locale/fr'
 
 import Subline from './Subline'
 
@@ -57,7 +57,7 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories }) => {
         <Link to={slug}>{title}</Link>
       </Title>
       <Subline>
-        {moment(date).format('LL')} &mdash; {timeToRead} mn de lecture &mdash; Dans{' '}
+        {moment(date, 'LL').format('LL')} &mdash; {timeToRead} mn de lecture &mdash; Dans{' '}
         {categories.map((cat, i) => (
           <React.Fragment key={cat}>
             {!!i && ', '}
