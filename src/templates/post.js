@@ -4,6 +4,8 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import moment from 'moment'
+import localization from 'moment/locale/fr'
 
 import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from '../components'
 import config from '../../config'
@@ -63,7 +65,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
         <Content>
           <Title>{post.title}</Title>
           <Subline>
-            {post.date} &mdash; {postNode.timeToRead} mn de lecture &mdash; Dans{' '}
+            {moment(post.date).format('LL')} &mdash; {postNode.timeToRead} mn de lecture &mdash; Dans{' '}
             {post.categories.map((cat, i) => (
               <React.Fragment key={cat}>
                 {!!i && ', '}
@@ -108,7 +110,7 @@ export const postQuery = graphql`
       excerpt
       frontmatter {
         title
-        date(formatString: "MM/DD/YYYY")
+        date
         categories
       }
       timeToRead
