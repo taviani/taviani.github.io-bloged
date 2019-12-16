@@ -5,7 +5,7 @@
   "author": "Ed <ed@kde.fr> (https://blog.kde.fr)",
   "dependencies": {
     "@mdx-js/mdx": "^1.4.4",
-    "@mdx-js/react": "^1.4.4",
+    "@mdx-js/react": "^1.5.2",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.15.11",
     "gatsby-plugin-catch-links": "^2.1.8",
